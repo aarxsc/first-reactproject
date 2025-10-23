@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+  color: #f9fafb;
+}
+
+/* Featured Section */
+.featured-work {
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+}
+
+.featured-header {
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.featured-header h2 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.featured-header p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* Grid for projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Project card */
+.project-card {
+  position: relative;
+  background: linear-gradient(180deg, #111 0%, #000 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: #f9fafb;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  height: 350px; 
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(118, 99, 2, 0.799);
+}
+
+/* Project Title */
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Tags (hidden by default) */
+.project-tags {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show tags and hide title on hover */
+.project-card:hover h3 {
+  opacity: 0;
+}
+
+.project-card:hover .project-tags {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* Tag styling */
+.project-tag {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  color: #ddd;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  transition: background 0.3s ease;
+}
+
+.project-tag:hover {
+  background: #ff004c;
+  color: #fff;
+}
+
+
+/* Overlay when hovered */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Button in overlay */
+.view-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Project info (bottom left) */
+.project-info {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+}
+
+.project-info h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0 10px;
+  transition: all 0.3s ease;
+}
+
+/* Tags hidden initially */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Show tags when hovered */
+.project-card:hover .tags {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tag style */
+.tags span {
+  background-color: #b6f397;
+  color: #111;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-work{
+    padding: 60px 20px;
+  }
+  
+    .featured-header h2 {
+    font-size: 3rem;
+  }
+
+  .featured-header p {
+    font-size: 1rem;
+  }
+}
