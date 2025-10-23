@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&family=Great+Vibes&display=swap');
+
+:root {
+  --title-color: #f2f2f2;
+  --background-start: #8e002a;
+  --background-end: #1a0000;
+  --badge-bg: #ff003c;
+  --badge-shadow: rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+}
+
+.portfolio-section {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at top, var(--background-start), var(--background-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-image-right {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+/* === Projects Button (Clean Text Only) === */
+.projects {
+  position: absolute;
+  top: 140px;
+  left: 160px;
+  background: none; /* Removed background color */
+  color: white;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none; 
+  border-radius: 0; 
+  box-shadow: none; 
+  z-index: 2;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Great Vibes', cursive;
+}
+
+.projects::before {
+  content: "↳";
+  color: #f1c40f;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.projects:hover {
+  color: #f1c40f;
+  background: none;
+  box-shadow: none;
+}
+
+.projects:hover::before {
+  transform: translateX(4px);
+}
+
+.projects:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* === Giant Split Title === */
+.portfolio-title {
+  position: absolute;
+  top: 150px;
+  left: 120px;
+  color: var(--title-color);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.title-top {
+  font-size: 18vw;
+  margin-bottom: -2vw;
+}
+
+.title-bottom {
+  font-size: 18vw;
+  margin-left: 20vw;
+}
+
+/* === Subtext Styling === */
+.portfolio-subtext {
+  position: absolute;
+  bottom: 100px;
+  left: 140px;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  z-index: 3;
+  line-height: 1.6;
+}
+
+.year {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.2rem;
+  margin-left: 6px;
+}
+
+.tagline {
+  line-height: 1.6;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* === Responsive for Smaller Screens === */
+@media (max-width: 768px) {
+  .title-top,
+  .title-bottom {
+    font-size: 14vw;
+    margin-left: 10vw;
+  }
+
+  .portfolio-subtext {
+    bottom: 60px;
+    left: 10vw;
+    font-size: 1rem;
+  }
+
+  .portfolio-image-right {
+    width: 150px;
+    height: 150px;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .projects {
+    top: 100px;
+    left: 10vw;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+}
